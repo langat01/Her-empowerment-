@@ -1,350 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empower Her Kenya</title>
-    <style>
-        /* ===== GLOBAL STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* ===== NAVIGATION BAR ===== */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .logo h1 {
-            font-size: 24px;
-            font-weight: 700;
-        }
-        
-        .logo span {
-            color: #ff6b6b;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #ff6b6b;
-        }
-        
-        .donate-btn {
-            background-color: #ff6b6b;
-            color: white !important;
-            padding: 8px 20px;
-            border-radius: 5px;
-        }
-        
-        .donate-btn:hover {
-            background-color: #e05555;
-        }
-        
-        /* ===== HERO SECTION ===== */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #ff6b6b;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .cta-button:hover {
-            background-color: transparent;
-            border-color: white;
-        }
-        
-        /* ===== MISSION SECTION ===== */
-        .mission-section {
-            padding: 80px 10%;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #333;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #ff6b6b;
-            margin: 15px auto;
-        }
-        
-        .mission-cards {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .mission-card {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .mission-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .mission-card i {
-            font-size: 50px;
-            color: #ff6b6b;
-            margin-bottom: 20px;
-        }
-        
-        .mission-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        /* ===== IMPACT SECTION ===== */
-        .impact-section {
-            background: #ff6b6b;
-            color: white;
-            padding: 80px 10%;
-            text-align: center;
-        }
-        
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-        
-        .stat-box {
-            margin: 20px;
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        /* ===== FOOTER ===== */
-        footer {
-            background: #333;
-            color: white;
-            padding: 40px 10%;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            width: 100%;
-            padding-top: 30px;
-            border-top: 1px solid #555;
-            margin-top: 20px;
-        }
-        
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content h1 {
-                font-size: 32px;
-            }
-            
-            .mission-card {
-                min-width: 100%;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empower Her Kenya</title>
+  <meta name="description" content="Empower Her Kenya uplifts girls and women through education, mentorship, and health access. Join the movement today.">
+  <meta property="og:title" content="Empower Her Kenya">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+  <meta property="og:url" content="https://empowerherkenya.github.io">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Add your CSS styles here (same as your working version) */
+    /* Paste complete CSS from previous code block */
+  </style>
 </head>
 <body>
-    <!-- ===== NAVIGATION BAR ===== -->
-    <nav>
-        <div class="logo">
-            <h1>Empower Her <span>Kenya</span></h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Work</a></li>
-            <li><a href="#">Support Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#" class="donate-btn">Donate</a></li>
-        </ul>
-    </nav>
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <div class="logo">
+      <h1>Empower Her <span>Kenya</span></h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="programs.html">Our Work</a></li>
+      <li><a href="support.html">Support Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="donate.html" class="donate-btn">Donate</a></li>
+    </ul>
+  </nav>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Uplifting Girls & Women in Kenya</h1>
-            <a href="#" class="cta-button">Learn More</a>
-        </div>
-    </section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Uplifting Girls & Women in Kenya</h1>
+      <a href="about.html" class="cta-button">Learn More</a>
+    </div>
+  </section>
 
-    <!-- ===== MISSION SECTION ===== -->
-    <section class="mission-section">
-        <h2 class="section-title">Our Mission</h2>
-        <div class="mission-cards">
-            <div class="mission-card">
-                <i class="fas fa-bullseye"></i>
-                <h3>Our Vision</h3>
-                <p>A future where girls thrive with opportunities, transforming their lives and communities.</p>
-            </div>
-            <div class="mission-card">
-                <i class="fas fa-hands-helping"></i>
-                <h3>Support Us</h3>
-                <p>Volunteer, participate, or donate to help us reach more women and girls.</p>
-            </div>
-            <div class="mission-card">
-                <i class="fas fa-users"></i>
-                <h3>Who We Are</h3>
-                <p>Dedicated team working to break the cycle of poverty through education.</p>
-            </div>
-        </div>
-    </section>
+  <!-- MISSION SECTION -->
+  <section class="mission-section">
+    <h2 class="section-title">Our Mission</h2>
+    <div class="mission-cards">
+      <div class="mission-card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Our Vision</h3>
+        <p>A future where girls thrive with opportunities, transforming their lives and communities.</p>
+      </div>
+      <div class="mission-card">
+        <i class="fas fa-hands-helping"></i>
+        <h3>Support Us</h3>
+        <p>Volunteer, participate, or donate to help us reach more women and girls.</p>
+      </div>
+      <div class="mission-card">
+        <i class="fas fa-users"></i>
+        <h3>Who We Are</h3>
+        <p>Dedicated team working to break the cycle of poverty through education.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ===== IMPACT SECTION ===== -->
-    <section class="impact-section">
-        <h2 class="section-title">Our Impact</h2>
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-number">440+</div>
-                <p>Girls Reached</p>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">92%</div>
-                <p>Learned Valuable Skills</p>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">76%</div>
-                <p>Improved Communication</p>
-            </div>
-        </div>
-    </section>
+  <!-- IMPACT SECTION -->
+  <section class="impact-section">
+    <h2 class="section-title">Our Impact</h2>
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number">440+</div>
+        <p>Girls Reached</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">92%</div>
+        <p>Learned Valuable Skills</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">76%</div>
+        <p>Improved Communication</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="footer-column">
-            <h3>Contact Us</h3>
-            <ul>
-                <li><i class="fas fa-envelope"></i> info@empowerherkenya.com</li>
-                <li><i class="fas fa-phone"></i> +254 700 000000</li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Programs</a></li>
-                <li><a href="#">Donate</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Follow Us</h3>
-            <ul>
-                <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 Empower Her Kenya. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <ul>
+        <li><i class="fas fa-envelope"></i> info@empowerherkenya.com</li>
+        <li><i class="fas fa-phone"></i> +254 700 000000</li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Our Programs</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2024 Empower Her Kenya. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
